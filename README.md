@@ -1,3 +1,1 @@
-# hello-world
-This is just a test.
-We're just adjusting this one line to read as it currently does :D
+This repo contains my dot files. They aren't huge and glamourous yet.... but I'm working on it.
