@@ -22,3 +22,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Place Alias Commands Here
 alias c="clear"
 alias ll="ls -al"
+
+# ------------------------------
+# 3. [Placeholder for third section title]
+# -----------------------------
