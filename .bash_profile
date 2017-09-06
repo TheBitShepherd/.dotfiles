@@ -26,3 +26,6 @@ alias ll="ls -al"
 # ------------------------------
 # 3. [Placeholder for third section title]
 # -----------------------------
+
+# soon there will be more functionality here
+
