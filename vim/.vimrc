@@ -52,4 +52,19 @@ filetype plugin indent on    " required
 syntax on
 colorscheme srcery
 set number relativenumber
+" highlight cursor line
 set cursorline 
+" Make backspace normal
+set backspace=indent,eol,start
+
+"""""""""""""""""""""""""""""""""""""
+"          APEX SYNTAX 
+"""""""""""""""""""""""""""""""""""""
+"filetype on
+"au BufNewFile,BufRead *.cls set filetype=java
+"au BufNewFile,BufRead *.page set filetype=html
+"au BufNewFile,BufRead *.trigger set filetype=java
+
+autocmd BufNewFile,BufRead *.cls set syntax=java
+
+
