@@ -28,12 +28,11 @@ filetype plugin indent on    " required
 "
 " GENERAL
 "
-
 syntax on
 colorscheme srcery
 set number relativenumber
 " highlight cursor line
-set cursorline 
+set cursorline
 " Make backspace normal
 set backspace=indent,eol,start
 " Change cursor for different modes
@@ -41,9 +40,29 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" Set tabs to be spaces
+set expandtab
+set tabstop=4
+" Show whitespace chars
+set list
+set listchars=eol:¬,tab:>-
 
 "
-" APEX SYNTAX 
+" Functions
+"
+
+" Meow!
+function Meow()
+        echom "Meow!"
+endfunction
+
+" Deleted Trailing Whitespace
+function DTW()
+        %s/\s\+$//e
+endfunction
+
+"
+" APEX SYNTAX
 "
 
 "filetype on
