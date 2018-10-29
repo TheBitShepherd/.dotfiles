@@ -22,7 +22,7 @@ setopt prompt_subst
 #
 PROMPT='
 $FG[001]┌──[$FG[032]%~$FG[001]]-[$FG[050]${vcs_info_msg_0_}$FG[001]]
-$FG[001]└──> $FG[002] ༼ つ ◕_◕ ༽つ $reset_color\$'
+$FG[001]└──> $FG[002] ༼ つ ◕_◕ ༽つ\$$reset_color '
 
 # right prompt
 if type "virtualenv_prompt_info" > /dev/null
