@@ -45,7 +45,16 @@ set expandtab
 set tabstop=4
 " Show whitespace chars
 set list
-set listchars=eol:¬,tab:>-
+set listchars=eol:¬
+
+
+"
+" Commands
+"
+" Paste It! (PI)
+" Send selected text to sprunge.us and send URL to clipboard
+command -range=% PI silent execute <line1> . "," . <line2> . "w !curl -F 'sprunge=<-' http://sprunge.us | tr -d '\\n' | pbcopy"
+
 
 "
 " Functions
