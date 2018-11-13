@@ -46,6 +46,8 @@ set tabstop=4
 " Show whitespace chars
 set list
 set listchars=eol:¬
+" Center cursor vertically when possible
+set scrolloff=999
 
 
 "
