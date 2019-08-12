@@ -2,6 +2,7 @@
 # General
 #
 
+#ZSH_THEME="brandor"
 ZSH_THEME="brandor"
 export ZSH=$HOME/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -30,6 +31,11 @@ alias vimrc="vim ~/repos/dotfiles/vim/.vimrc"
 alias zshrc="vim ~/repos/dotfiles/zsh/.zshrc"
 # edit zsh custom theme
 alias zshtheme="vim ~/oh-my-zsh/custom/themes/brandor.zsh-theme"
+alias c="clear"
+alias ll="ls -l"
+alias lal="ls -al"
+alias chrome="open -a \"Google Chrome\""
+alias co="checkout"
 
 # ls -A after cd'ing
 function chpwd() {
