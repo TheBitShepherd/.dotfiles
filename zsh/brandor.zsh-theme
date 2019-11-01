@@ -1,6 +1,6 @@
+#
 # brandor.zsh-theme
-# Repo: https://github.com/andyfleming/oh-my-zsh
-# Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
+#
 
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
@@ -17,11 +17,18 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 setopt prompt_subst
 
+
+git_prompt() {
+ ref=$(git symbolic-ref HEAD | cut -d'/' -f3-)
+ echo $ref
+}
+
+
 #
 # BrandoR's prompt
 #
 PROMPT='
-$FG[001]┌──[$FG[032]%~$FG[001]]-[$FG[050]${vcs_info_msg_0_}$FG[001]]
+$FG[001]┌──[$FG[032]%~$FG[001]]-[$FG[050]$(git_prompt)$FG[001]]
 $FG[001]└──> $FG[002] ༼ つ ◕_◕ ༽つ\$$reset_color '
 
 # right prompt

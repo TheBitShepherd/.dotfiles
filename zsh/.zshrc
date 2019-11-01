@@ -24,18 +24,19 @@ export SAVEHIST=$HISTSIZE
 #
 
 # reload .zshrc file
-alias zshconfig=". ~/.zshrc"
+alias zshconfig="~/.zshrc"
 # edit .zshrc
 alias vimrc="vim ~/repos/dotfiles/vim/.vimrc"  
 # edit .vimrc
 alias zshrc="vim ~/repos/dotfiles/zsh/.zshrc"
 # edit zsh custom theme
-alias zshtheme="vim ~/oh-my-zsh/custom/themes/brandor.zsh-theme"
+alias zshtheme="vim ~/repos/dotfiles/zsh/brandor.zsh-theme"
 alias c="clear"
 alias ll="ls -l"
 alias lal="ls -al"
 alias chrome="open -a \"Google Chrome\""
-alias co="checkout"
+alias notes="vim ~/.notes"
+
 
 # ls -A after cd'ing
 function chpwd() {
