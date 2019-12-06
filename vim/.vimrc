@@ -8,6 +8,29 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"
+" PLUGINS
+"
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin for coloschemes
+Plugin 'flazz/vim-colorschemes'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,8 +67,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set expandtab
 set tabstop=4
 " Show whitespace chars
-set list
-set listchars=eol:¬
+"set list
 " Center cursor vertically when possible
 set scrolloff=999
 
@@ -81,23 +103,3 @@ au BufNewFile,BufRead *.cls set filetype=java
 au BufNewFile,BufRead *.page set filetype=html
 au BufNewFile,BufRead *.trigger set filetype=java
 
-"
-" PLUGINS
-"
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin for coloschemes
-Plugin 'flazz/vim-colorschemes'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-Plugin 'scrooloose/nerdtree'
