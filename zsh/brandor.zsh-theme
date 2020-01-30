@@ -18,9 +18,18 @@ precmd() { vcs_info }
 setopt prompt_subst
 
 
+git_branch_name() {
+if [ -d .git ]; then
+    ref=$(git symbolic-ref HEAD | cut -d'/' -f3-);
+    echo $ref;
+fi;
+}
+
 git_prompt() {
- ref=$(git symbolic-ref HEAD | cut -d'/' -f3-)
- echo $ref
+    if [ -z $(git_branch_name) ]
+    then
+        echo '-['$FG[050]$(git_branch_name)$FG[001]']'
+    fi
 }
 
 
@@ -28,16 +37,8 @@ git_prompt() {
 # BrandoR's prompt
 #
 PROMPT='
-$FG[001]┌──[$FG[032]%~$FG[001]]-[$FG[050]$(git_prompt)$FG[001]]
+$FG[001]┌──[$FG[032]%~$FG[001]]-[$FG[050]$(git_branch_name)$FG[001]]
 $FG[001]└──> $FG[002] ༼ つ ◕_◕ ༽つ\$$reset_color '
-
-# right prompt
-if type "virtualenv_prompt_info" > /dev/null
-then
-	RPROMPT='$(virtualenv_prompt_info)$my_gray%n@%m%{$reset_color%}%'
-else
-	RPROMPT='$my_gray%n@%m%{$reset_color%}%'
-fi
 
 
 #

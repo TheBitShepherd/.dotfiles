@@ -44,8 +44,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set expandtab
 set tabstop=4
 " Show whitespace chars
-set list
-set listchars=eol:¬
+"set list
+"set listchars=eol:¬
 " Center cursor vertically when possible
 set scrolloff=999
 
@@ -101,3 +101,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
