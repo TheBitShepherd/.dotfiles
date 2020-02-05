@@ -68,10 +68,7 @@ set expandtab
 set tabstop=4
 " Show whitespace chars
 "set list
-<<<<<<< HEAD
 "set listchars=eol:¬
-=======
->>>>>>> 8930545d553da9ea25d346a037a777288de6eaff
 " Center cursor vertically when possible
 set scrolloff=999
 
