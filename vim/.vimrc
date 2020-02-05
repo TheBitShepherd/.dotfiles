@@ -104,7 +104,6 @@ au BufNewFile,BufRead *.cls set filetype=java
 au BufNewFile,BufRead *.page set filetype=html
 au BufNewFile,BufRead *.trigger set filetype=java
 
-<<<<<<< HEAD
 "
 " PLUGINS
 "
@@ -128,5 +127,3 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-=======
->>>>>>> 8930545d553da9ea25d346a037a777288de6eaff
