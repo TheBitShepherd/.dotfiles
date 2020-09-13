@@ -47,6 +47,7 @@ alias ll="ls -l"
 alias lal="ls -al"
 alias chrome="open -a \"Google Chrome\""
 alias notes="vim ~/.notes"
+alias dfs="cd ~/repos/dotfiles"
 
 
 #
