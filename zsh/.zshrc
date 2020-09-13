@@ -3,7 +3,7 @@
 #
 
 #ZSH_THEME="brandor"
-ZSH_THEME="brandor"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH=$HOME/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -17,6 +17,11 @@ export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
+#
+# Pyenv Virtualenv
+#
+#eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 
 #
@@ -27,9 +32,13 @@ export SAVEHIST=$HISTSIZE
 alias zshconfig="source ~/.zshrc"
 # edit zsh theme
 alias zshtheme="vim ~/repos/dotfiles/zsh/brandor.zsh-theme"
-# edit .zshrc
-alias vimrc="vim ~/repos/dotfiles/vim/.vimrc"
+# use neovim
+alias vim='nvim'
 # edit .vimrc
+alias vimrc="vim ~/repos/dotfiles/vim/.vimrc"
+# edit ~/.config/nvim/init.vim
+alias vinit='vim ~/repos/dotfiles/vim/init.vim'
+# edit .zshrc
 alias zshrc="vim ~/repos/dotfiles/zsh/.zshrc"
 # edit zsh custom theme
 alias zshtheme="vim ~/repos/dotfiles/zsh/brandor.zsh-theme"
@@ -38,6 +47,7 @@ alias ll="ls -l"
 alias lal="ls -al"
 alias chrome="open -a \"Google Chrome\""
 alias notes="vim ~/.notes"
+
 
 #
 # SFDO Specific
