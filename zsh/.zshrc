@@ -20,9 +20,8 @@ export SAVEHIST=$HISTSIZE
 #
 # Pyenv Virtualenv
 #
-#eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
 
 #
 # Aliases
@@ -37,7 +36,7 @@ alias vim='nvim'
 # edit .vimrc
 alias vimrc="vim ~/repos/dotfiles/vim/.vimrc"
 # edit ~/.config/nvim/init.vim
-alias vinit='vim ~/repos/dotfiles/vim/init.vim'
+alias vinit='vim ~/.config/nvim/init.vim'
 # edit .zshrc
 alias zshrc="vim ~/repos/dotfiles/zsh/.zshrc"
 # edit zsh custom theme
@@ -45,28 +44,21 @@ alias zshtheme="vim ~/repos/dotfiles/zsh/brandor.zsh-theme"
 alias c="clear"
 alias ll="ls -l"
 alias lal="ls -al"
-alias chrome="open -a \"Google Chrome\""
+alias chrome="open -a /Applications/Google\ Chrome.app"
 alias notes="vim ~/.notes"
 alias dfs="cd ~/repos/dotfiles"
-
+alias ..="cd .."
+alias untar="tar -zxvf"
 
 #
 # SFDO Specific
 #
-alias metaci="c; cd ~/repos/metaci"
-alias metacic="c; cd ~/repos/metaci; code ."
+alias metaci="c; cd ~/repos/metaci; source env; bin/unpack-node"
 alias cumulusci="c; cd ~/repos/cumulusci"
-alias ccic="c; cd ~/repos/cumulusci; code ."
 alias metadeploy="c; cd ~/repos/metadeploy"
-alias metadeployc="c; cd ~/repos/metadeploy; code ."
-alias edb="c; cd ~/repos/errors_db"
-alias edbc="c; cd ~/repos/errors_db; code ."
 alias metashare="c; cd ~/repos/metashare"
-alias metasharec="c; cd ~/repos/metashare; code ."
 alias npsp="c; cd ~/repos/npsp"
-alias npspc="c; cd ~/repos/npsp; code ."
 alias statusite="c; cd ~/repos/statusite"
-alias statusitec="c; cd ~/repos/statusite; code ."
 
 
 #
@@ -110,6 +102,7 @@ alias clean_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git 
 function chpwd() {
 	ls -A
 }
+
 
 
 function metacib {
