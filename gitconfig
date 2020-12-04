@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Brandon Parker
+    email = brandonkirkparker@gmail.com
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status -s
+	di = diff
+	dc = diff --cached
+	l = log --pretty --graph
+	tags = tag -l
+	branches = branch -a
+    remotes = remote -v 
+
+[core]
+    excludesfile = ~/repos/dotfiles/gitignore
+
+
+[color]
+	ui = auto
