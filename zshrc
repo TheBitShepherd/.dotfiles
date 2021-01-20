@@ -29,6 +29,11 @@ eval "$(pyenv virtualenv-init -)"
 # hundredths of a second)
 export KEYTIMEOUT=1
 
+export CDPATH="$HOME:$HOME/repos"
+
+
+export GREP_COLOR="auto"
+
 #
 # Aliases
 #
@@ -60,6 +65,15 @@ alias g="git"
 alias gsl="git stash list"
 alias gsc="git stash clear"
 
+# Pretty Print $PATH
+# gsed works with newlines (brew install gsed)
+alias ppath="echo $PATH | gsed 's/:/\n/g' | sort"
+
+# Do this first
+alias yarn-upgrade="yarn upgrade-interactive --latest"
+# Then do this :)
+alias yarn-reset="rm -rf node_modules/; rm -f yarn.lock; yarn"
+
 
 #
 # SFDO Specific
@@ -76,7 +90,7 @@ alias statusite="c; cd ~/repos/statusite"
 # CumulusCI
 #
 alias ccilog='vim ~/.cumulusci/logs/cci.log'
-alias ccfi='c; cci flow info'
+alias ccfi='cci flow info'
 alias ccfl='c; cci flow list'
 alias ccfr='c; cci flow run'
 alias ccob='c; cci org browser'
@@ -96,7 +110,7 @@ alias ccsc='c; cci service connect'
 alias ccsl='c; cci service list'
 alias ccss='c; cci service show'
 alias cctd='c; cci task doc'
-alias ccti='c; cci task info'
+alias ccti='cci task info'
 alias cctl='c; cci task list'
 alias cctr='c; cci task run'
 alias ccupg='c; pip install --upgrade cumulusci'
@@ -180,4 +194,17 @@ function metacib {
 plugins=(
     git colored-man-pages
 )
+
+# Clone a repo and cd into it
+gccd() {
+	if (( $# != 1 )); then
+		echo "Git repo url is required. Example: git@github.com:org/repo.git" && exit;
+	fi
+	# grab directory off git url
+	DIR=$(echo "$1" | awk -F '[/.]' '{print $4}');
+	# clone repo
+	git clone "$1";
+	# cd into cloned repo
+	cd "$DIR" || exit 0;
+}
 

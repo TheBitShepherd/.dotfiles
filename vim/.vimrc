@@ -52,7 +52,7 @@ filetype plugin indent on    " required
 " GENERAL
 "
 syntax on
-colorscheme srcery
+colorscheme molokai
 set number relativenumber
 " highlight cursor line
 set cursorline
