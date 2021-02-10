@@ -7,6 +7,9 @@ export ZSH=$HOME/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export CDPATH=$HOME:$HOME/repos
 
+# ls -A after cd'ing
+function chpwd() {
+	ls -A
 
 #
 # History
@@ -22,7 +25,6 @@ export SAVEHIST=$HISTSIZE
 # Aliases
 #
 
-alias g='git'
 # 
 # use neovim
 alias vim='nvim'
@@ -59,6 +61,7 @@ alias mdp="c; cd ~/repos/metadeploy; source env; bin/unpack-node"
 alias metecho="c; cd ~/repos/metashare"
 alias npsp="c; cd ~/repos/npsp"
 alias statusite="c; cd ~/repos/statusite"
+alias tube="c; cd ~/repos/tubular"
 
 
 #
@@ -93,36 +96,45 @@ function ccicmd() {
         cci task run command eval($1)
 }
 
-alias yarn-upgrade="yarn upgrade-interactive --latest"
-alias yarn-reset="rm -rf node_modules/ yarn.lock; yarn"
-
-#
-# git
-#
-alias clean_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
-
-# ls -A after cd'ing
-function chpwd() {
-	ls -A
-}
-
-
-function metacib {
-    /usr/bin/open -a "/Applications/Google Chrome.app" https://mrbelvedereci.herokuapp.com/builds/$1 
-}
-
-
 function ccidevnew() {
     cci org scratch_delete $1
     cci org default $1
     cci org browser 
 }
 
+# grep for task
+function gft() {
+    cci task list | grep $1
+}
+
+# grep for flow
+function gff() {
+    cci flow list | grep $1
+}
+
+function metacib {
+    /usr/bin/open -a "/Applications/Google Chrome.app" https://mrbelvedereci.herokuapp.com/builds/$1 
+}
+
+# JavaScript dependency updates made easy
+alias yarn-upgrade="yarn upgrade-interactive --latest"
+alias yarn-reset="rm -rf node_modules/ yarn.lock; yarn"
+
+#
+# git stuff
+#
+alias g='git'
+alias gsl='git stash list'
+alias clean_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+
+# git stash drop @index
+function gsd {
+    git stash drop @{$1}
+}
+
 #
 # Plugins
 #
-
 plugins=(
     git colored-man-pages
 )
-
