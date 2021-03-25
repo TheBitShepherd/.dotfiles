@@ -10,6 +10,7 @@ export CDPATH=$HOME:$HOME/repos
 # ls -A after cd'ing
 function chpwd() {
 	ls -A
+}
 
 #
 # History
@@ -46,7 +47,7 @@ alias c="clear"
 alias ll="ls -l"
 alias lal="ls -al"
 alias chrome="open -a \"Google Chrome\""
-alias notes="vim ~/.notes"
+alias wm="vim ~/.working_memory.txt"
 
 #
 # SFDO Specific
@@ -112,8 +113,20 @@ function gff() {
     cci flow list | grep $1
 }
 
+# grep in universal cumulusci.yml file
+# first param is the string you want to search in the universal cumulusci.yml file
+# second param is lines of context _after_ a match is detected.
+function ccyml() {
+    grep $1 ~/repos/cumulusci/cumulusci/cumulusci.yml -A $2 --line-num    
+}
+
 function metacib {
     /usr/bin/open -a "/Applications/Google Chrome.app" https://mrbelvedereci.herokuapp.com/builds/$1 
+}
+
+# Search python docs (python doc search)
+function pds() {
+    /usr/bin/open -a "/Applications/Google Chrome.app" https://docs.python.org/3/search.html?q=$1
 }
 
 # JavaScript dependency updates made easy
@@ -125,6 +138,7 @@ alias yarn-reset="rm -rf node_modules/ yarn.lock; yarn"
 #
 alias g='git'
 alias gsl='git stash list'
+alias gsp='git stash pop'
 alias clean_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 # git stash drop @index
@@ -132,9 +146,11 @@ function gsd {
     git stash drop @{$1}
 }
 
-#
-# Plugins
-#
+# grep history
+function ghist {
+    history | grep $1 | tail -n 10
+}
+
 plugins=(
     git colored-man-pages
 )
