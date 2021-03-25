@@ -34,7 +34,6 @@ alias vimrc="vim ~/repos/dotfiles/nvim/general/settings.vim"
 # edit init.vim
 alias vimi="vim ~/repos/dotfiles/nvim/init.vim"
 alias vimplug="vim ~/repos/dotfiles/nvim/vim-plug/plugins.vim"
-
 # reload .zshrc file
 alias zshconfig="source ~/.zshrc"
 # edit zsh theme
@@ -132,6 +131,12 @@ function pds() {
 # JavaScript dependency updates made easy
 alias yarn-upgrade="yarn upgrade-interactive --latest"
 alias yarn-reset="rm -rf node_modules/ yarn.lock; yarn"
+
+function ccidevnew() {
+    cci org scratch_delete $1
+    cci org default $1
+    cci org browser 
+}
 
 #
 # git stuff
