@@ -5,6 +5,7 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH=$HOME/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
 export CDPATH=$HOME:$HOME/repos
 
 # ls -A after cd'ing
@@ -67,6 +68,7 @@ alias tube="c; cd ~/repos/tubular"
 #
 # CumulusCI
 #
+alias ccihome='cd ~/.cumulusci'
 alias ccilog='vim ~/.cumulusci/logs/cci.log'
 alias ccfi='cci flow info'
 alias ccfl='cci flow list'
@@ -144,7 +146,7 @@ function ccidevnew() {
 alias g='git'
 alias gsl='git stash list'
 alias gsp='git stash pop'
-alias clean_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias prune_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 # git stash drop @index
 function gsd {
@@ -153,9 +155,17 @@ function gsd {
 
 # grep history
 function ghist {
-    history | grep $1 | tail -n 10
+    history | grep $1 | tail -n 30
+}
+
+# add all changes, commit, and push dotfiles
+function save_dots() {
+    cd dotfiles; git add . ; g commit -m 'savepoint' ; git push ; cd - ;
 }
 
 plugins=(
-    git colored-man-pages
+    colored-man-pages
+    heroku
+    pip
+    vundle
 )
