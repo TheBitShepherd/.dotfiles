@@ -1,3 +1,4 @@
+
 #
 # General
 #
@@ -12,6 +13,7 @@ export CDPATH=$HOME:$HOME/repos
 function chpwd() {
 	ls -A
 }
+
 
 #
 # History
@@ -55,14 +57,14 @@ alias wm="vim ~/.working_memory.txt"
 alias cu="c; cd ~/repos/cumulusci"
 alias cumulusci="c; cd ~/repos/cumulusci"
 alias ccic="c; cd ~/repos/cumulusci; code ."
-alias metaci="c; cd ~/repos/metaci; source env; bin/unpack-node"
-alias mci="c; cd ~/repos/metaci; source env; bin/unpack-node"
-alias metadeploy="c; cd ~/repos/metadeploy; source env; bin/unpack-node"
-alias mdp="c; cd ~/repos/metadeploy; source env; bin/unpack-node"
+alias metaci="c; cd ~/repos/metaci; bin/unpack-node"
+alias mci="c; cd ~/repos/metaci; bin/unpack-node"
+alias metadeploy="c; cd ~/repos/metadeploy; bin/unpack-node"
+alias mdp="c; cd ~/repos/metadeploy; bin/unpack-node"
 alias metecho="c; cd ~/repos/metashare"
 alias npsp="c; cd ~/repos/npsp"
 alias statusite="c; cd ~/repos/statusite"
-alias tube="c; cd ~/repos/tubular"
+alias tube="c; cd ~/repos/tubular; source .envrc"
 
 
 #
@@ -140,13 +142,37 @@ function ccidevnew() {
     cci org browser 
 }
 
+# weekly dependency updates
+function start_updates() {
+    git checkout main
+    git pull
+    git checkout -b 'feature/week-'"$1"'-updates' 
+    make update-deps
+}
+
+#
+# Python
+#
+
+function pip_uninstall {
+    pip freeze | xargs pip uninstall -y
+}
+
+
+#
+# Django
+#
+alias=dshell='./manage.py shell_plus --ipython'
+
 #
 # git stuff
 #
 alias g='git'
+alias gm='git switch main'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias prune_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias stash='git stash --include-untracked'
 
 # git stash drop @index
 function gsd {
