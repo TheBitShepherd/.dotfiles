@@ -56,11 +56,10 @@ alias wm="vim ~/.working_memory.txt"
 #
 alias cu="c; cd ~/repos/cumulusci"
 alias cumulusci="c; cd ~/repos/cumulusci"
-alias ccic="c; cd ~/repos/cumulusci; code ."
-alias metaci="c; cd ~/repos/metaci; bin/unpack-node"
-alias mci="c; cd ~/repos/metaci; bin/unpack-node"
-alias metadeploy="c; cd ~/repos/metadeploy; bin/unpack-node"
-alias mdp="c; cd ~/repos/metadeploy; bin/unpack-node"
+alias metaci="c; cd ~/repos/metaci"
+alias mci="c; cd ~/repos/metaci"
+alias metadeploy="c; cd ~/repos/metadeploy"
+alias mdp="c; cd ~/repos/metadeploy"
 alias metecho="c; cd ~/repos/metashare"
 alias mph="c; cd ~/repos/MetaPush"
 alias npsp="c; cd ~/repos/npsp"
@@ -96,7 +95,7 @@ alias cctd='cci task doc'
 alias ccti='cci task info'
 alias cctl='cci task list'
 alias cctr='cci task run'
-alias ccupg='pip install --upgrade cumulusci'
+
 function ccicmd() {
         cci task run command eval($1)
 }
@@ -182,7 +181,7 @@ function gsd {
 
 # grep history
 function ghist {
-    history | grep $1 | tail -n 30
+    history | grep $1 | tail -n 50
 }
 
 # add all changes, commit, and push dotfiles
