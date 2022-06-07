@@ -171,7 +171,7 @@ alias g='git'
 alias gm='git switch main'
 alias gsl='git stash list'
 alias gsp='git stash pop'
-alias prune_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias prune_branches='git branch --merged | egrep -v "(^\*|main)" | xargs git branch -d'
 alias stash='git stash --include-untracked'
 
 # git stash drop @index
