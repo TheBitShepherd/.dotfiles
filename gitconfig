@@ -3,6 +3,13 @@
 	name = Brandon Parker
     email = brandonkirkparker@gmail.com
 
+[core]
+    editor = /opt/homebrew/bin/nvim
+    excludesfile = ~/repos/dotfiles/gitignore
+
+[color]
+	ui = auto
+
 [alias]
 	co = checkout
 	br = branch
@@ -14,10 +21,3 @@
 	tags = tag -l
 	branches = branch -a
     remotes = remote -v 
-
-[core]
-    excludesfile = ~/repos/dotfiles/gitignore
-
-
-[color]
-	ui = auto

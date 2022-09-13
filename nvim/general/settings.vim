@@ -30,3 +30,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 au BufNewFile,BufRead *.cls set filetype=java
 au BufNewFile,BufRead *.page set filetype=html
 au BufNewFile,BufRead *.trigger set filetype=java
+
+" Enable running Python code
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
