@@ -5,7 +5,7 @@
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH=$HOME/oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 export CDPATH=$HOME:$HOME/repos
 
@@ -23,6 +23,12 @@ export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
+#
+# pyenv
+#
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 
 #
@@ -33,7 +39,7 @@ export SAVEHIST=$HISTSIZE
 # use neovim
 alias vim='nvim'
 # edit general settings
-alias vimrc="vim ~/repos/dotfiles/nvim/general/settings.vim"
+alias vimrc="vim ~/.config/nvim/general/settings.vim"
 # edit init.vim
 alias vimi="vim ~/repos/dotfiles/nvim/init.vim"
 alias vimplug="vim ~/repos/dotfiles/nvim/vim-plug/plugins.vim"
